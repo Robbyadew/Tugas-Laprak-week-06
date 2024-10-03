@@ -1,0 +1,16 @@
+n = int(input("masukan angka pada baris segitiga pascal: "))
+
+baris = [1]
+
+for _ in range(n - 1):
+    baris_baru = [1]
+    for i in range(len(baris) - 1):
+        baris_baru.append(baris[i] + baris[i + 1])
+    baris_baru.append(1)
+    baris = baris_baru
+
+jumlah = sum (baris)
+
+print(f"baris ke-{n}: dari segitiga pascal adalah")
+print("".join(map(str, baris)))
+print(f"jumlah angka pada baris tersebut adalah: {jumlah}")
